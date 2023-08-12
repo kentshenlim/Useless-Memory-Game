@@ -107,6 +107,9 @@
   opacity: 100%;
 }
 .radio-wrapper label:hover::before {
+  opacity: 70%;
+}
+.radio-wrapper label:hover::before {
   animation: jitter 2s;
   animation-iteration-count: infinite;
 }
