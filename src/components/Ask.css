@@ -15,7 +15,6 @@
   justify-content: space-around;
   width: 70%;
   min-width: 350px;
-  border: solid purple 3px;
 }
 .ask-main-wrapper > *:not(:first-child) {
   padding-left: 1rem;
@@ -45,7 +44,6 @@
 }
 
 .ask-difficulty-wrapper > .radio-wrapper {
-  border: solid red 3px;
   display: flex;
   justify-content: center;
 }
