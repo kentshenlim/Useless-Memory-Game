@@ -20,6 +20,7 @@ export default function Ask() {
           <span>ch</span>
         </div>
         <div className="one-word">
+          <span>&#39;</span>
           {eNode}
           <span>m</span>
         </div>
