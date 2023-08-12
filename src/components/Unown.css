@@ -1,0 +1,9 @@
+.unown-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.unown-wrapper > img {
+  width: 100%;
+}

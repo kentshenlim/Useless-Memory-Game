@@ -1,0 +1,26 @@
+.ask-main-wrapper {
+  border: solid red 3px;
+  width: 50%;
+  min-width: 400px;
+}
+
+.ask-title-wrapper {
+  display: flex;
+  border: solid purple 3px;
+  justify-content: center;
+  gap: max(0.5rem, 6%);
+}
+
+.one-word {
+  display: flex;
+  align-items: center;
+}
+
+.one-word > span {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  letter-spacing: 0.1rem;
+}

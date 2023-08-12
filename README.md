@@ -10,11 +10,10 @@
 
 ## Credits
 
-- No credit
+- PokeAPI sprites
 
 ## TODO
 
-TODO: favicon
 TODO: loading screen
 TODO: bgm Eterna Forest
 TODO: loading using script3.js, animated, welcome screen using unown static

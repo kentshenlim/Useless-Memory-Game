@@ -1,10 +1,11 @@
 import './App.css';
+import Ask from './components/Ask';
 
 function App() {
   return (
-    <>
-      <div>Hello React</div>
-    </>
+    <div className="app-wrapper">
+      <Ask />
+    </div>
   );
 }
 
