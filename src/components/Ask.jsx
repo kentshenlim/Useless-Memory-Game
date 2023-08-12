@@ -29,6 +29,24 @@ export default function Ask() {
           <span>all</span>
         </div>
       </div>
+      <div className="ask-difficulty-wrapper">
+        <div className="radio-wrapper">
+          <input type="radio" id="easy" name="difficulty" value="easy" />
+          <label htmlFor="easy">Easy</label>
+        </div>
+        <div className="radio-wrapper">
+          <input type="radio" id="medium" name="difficulty" value="medium" />
+          <label htmlFor="medium">Medium</label>
+        </div>
+        <div className="radio-wrapper">
+          <input type="radio" id="hard" name="difficulty" value="hard" />
+          <label htmlFor="hard">Hard</label>
+        </div>
+      </div>
+      <div className="ask-infos-wrapper">
+        <button>Start</button>
+        <button>GitHub</button>
+      </div>
     </main>
   );
 }

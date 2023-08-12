@@ -1,16 +1,28 @@
 .ask-main-wrapper {
   border: solid red 3px;
-  width: 50%;
+  width: 40%;
+  height: 45%;
   min-width: 400px;
-}
-
-.ask-title-wrapper {
   display: flex;
-  border: solid purple 3px;
-  justify-content: center;
-  gap: max(0.5rem, 6%);
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
+/* General -------------------------------------------------------------------*/
+.ask-main-wrapper > * {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  min-width: 350px;
+  border: solid purple 3px;
+}
+.ask-main-wrapper > *:not(:first-child) {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Title ---------------------------------------------------------------------*/
 .one-word {
   display: flex;
   align-items: center;
@@ -19,8 +31,31 @@
 .one-word > span {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   letter-spacing: 0.1rem;
+}
+
+/* Not title -----------------------------------------------------------------*/
+.ask-difficulty-wrapper label,
+.ask-infos-wrapper {
+  font-size: 1.5rem;
+}
+
+.ask-difficulty-wrapper > .radio-wrapper {
+  border: solid red 3px;
+  display: flex;
+  justify-content: center;
+  gap: max(0.5rem, 2%);
+}
+
+.ask-difficulty-wrapper label {
+  display: flex;
+  align-items: center;
+}
+
+.ask-infos-wrapper button {
+  padding: 0.8rem;
+  padding-block: 0.3rem;
 }
