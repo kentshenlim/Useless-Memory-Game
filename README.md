@@ -1,8 +1,21 @@
-# React + Vite
+# Catch-'Em-Recall
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+- Nothing
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Info
+
+- Nothing
+
+## Credits
+
+- No credit
+
+## TODO
+
+TODO: favicon
+TODO: loading screen
+TODO: bgm Eterna Forest
+TODO: loading using script3.js, animated, welcome screen using unown static
+TODO: local storage for highest score
