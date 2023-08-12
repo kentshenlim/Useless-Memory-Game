@@ -4,7 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -12,6 +11,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --text: rgba(56, 55, 55, 0.871);
+  --background: #88808069;
+  --primary: #8fb3ff;
+  --secondary: #bac5db;
+  --accent: #505d5a;
+
+  color: var(--text);
 }
 
 a {
@@ -43,7 +50,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: rgba(212, 203, 203, 0.514);
+  color: var(--accent);
   cursor: pointer;
   transition: border-color 0.25s;
 }

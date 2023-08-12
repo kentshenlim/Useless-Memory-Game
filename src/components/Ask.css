@@ -1,12 +1,16 @@
 .ask-main-wrapper {
-  border: solid red 3px;
+  padding: 0.5rem;
   width: 40%;
-  height: 45%;
-  min-width: 400px;
+  /* height: 45%; */
+  min-width: 450px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: var(--background);
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
 }
 
 /* General -------------------------------------------------------------------*/
@@ -16,22 +20,26 @@
   width: 70%;
   min-width: 350px;
 }
+.ask-main-wrapper > :first-child {
+  width: 90%;
+}
 .ask-main-wrapper > *:not(:first-child) {
   padding-left: 1rem;
   padding-right: 1rem;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 /* Title ---------------------------------------------------------------------*/
 .one-word {
   display: flex;
   align-items: center;
+  margin: 0.3rem;
 }
 
 .one-word > span {
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   letter-spacing: 0.1rem;
@@ -40,7 +48,7 @@
 /* Not title -----------------------------------------------------------------*/
 .ask-difficulty-wrapper label,
 .ask-infos-wrapper {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .ask-difficulty-wrapper > .radio-wrapper {
@@ -70,8 +78,8 @@
 
 .radio-wrapper label::before {
   content: '';
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   background-image: url('../assets/img/pokeBall.png');
   background-size: cover;
@@ -89,6 +97,8 @@
 }
 .radio-wrapper input[type='radio']:checked + label {
   opacity: 100%;
+  color: var(--secondary);
+  text-decoration: underline;
 }
 @keyframes shake {
   0%,
@@ -129,4 +139,8 @@
   100% {
     transform: rotate(0deg);
   }
+}
+
+.radio-wrapper label:active {
+  transform: scale(0.98);
 }
