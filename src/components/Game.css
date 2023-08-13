@@ -5,14 +5,31 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  user-select: none;
+}
+
+/* General -------------------------------------------------------------------*/
+/* Shiny borders and filtered background */
+.game-navbar p,
+.score-wrapper > *,
+.rem-count {
+  background-color: var(--background2); /* Can overwrite with different color */
+  backdrop-filter: blur(5px);
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 20px #64dbff; /* Can overwrite with different color */
+  padding-block: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: var(--primary);
 }
 
 /* Navbar --------------------------------------------------------------------*/
 .game-navbar {
-  height: clamp(2rem, 7%, 5rem);
+  /* height: clamp(2rem, 7%, 5rem); */
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center; /* Don't stretch, audio-toggler will get too big */
 }
 
 .game-navbar > :first-child {
@@ -25,6 +42,7 @@
 .game-navbar > .audio-toggler {
   border-radius: 50%;
   padding: 0.2rem;
+  height: 3rem;
 }
 
 .game-navbar > .audio-toggler > img {
@@ -33,16 +51,33 @@
 
 .game-navbar p {
   margin: 0;
-  display: flex;
-  align-items: center;
-  background-color: var(--background);
-  backdrop-filter: blur(5px);
-  border-radius: 0.5rem;
-  box-shadow: 0px 0px 20px #64dbff;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  color: var(--secondary);
   font-size: 1.25rem;
+  width: 70%;
+}
+/* Progress ------------------------------------------------------------------*/
+.game-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-wrapper {
+  width: 50%;
+  min-width: 300px;
+}
+
+.score-wrapper > * {
+  display: inline-block;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: rgba(203, 238, 108, 0.342); /* Overwrite shiny borders*/
+  box-shadow: 0px 0px 20px #aaff00; /* Overwrite shiny borders */
+}
+
+.rem-count {
+  margin-top: 1rem;
+  background-color: rgba(255, 198, 113, 0.479); /* Overwrite shiny borders*/
+  box-shadow: 0px 0px 20px #eccca9; /* Overwrite shiny borders */
 }
 
 /* Card table ----------------------------------------------------------------*/

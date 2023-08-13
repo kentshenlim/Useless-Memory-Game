@@ -10,10 +10,26 @@ export default function Game() {
           <img src={chingling} alt="Chingling audio toggler" />
         </button>
         <p>
-          Select new Pokémon to get point. Don&#39;t select Pokémon chosen
-          before!
+          Choose new Pokémon to earn points. Avoid selecting previously chosen
+          ones!
         </p>
       </nav>
+
+      <div className="game-progress">
+        <div className="score-wrapper">
+          <div>
+            Score&#58; <span>0</span>
+          </div>
+          <div>
+            Best&#58; <span>0</span>
+          </div>
+        </div>
+        <div className="rem-count">
+          <span>Remaining&#58; </span>
+          <span>0</span>&#47;<span>10</span>
+        </div>
+      </div>
+
       <div className="card-table">
         <PokemonCard
           imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"

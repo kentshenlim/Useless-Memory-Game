@@ -31,7 +31,10 @@ export default function Ask() {
         </div>
       </div>
       <div className="ask-des-wrapper">
-        <p>Don&#39;t select Pokémon chosen before!</p>
+        <p>
+          Embark on a Pokémon-themed memory challenge. Avoid repeating
+          selections!
+        </p>
       </div>
       <div className="ask-difficulty-wrapper">
         <div className="radio-wrapper">
