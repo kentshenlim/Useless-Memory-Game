@@ -1,3 +1,8 @@
+@font-face {
+  font-family: tsuki;
+  src: url('./assets/font/Tsuki/Tsuki-www.Dfonts.org/Tsuki/NineTsukiRegular.ttf');
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,10 +18,10 @@
   -webkit-text-size-adjust: 100%;
 
   --text: #273336de;
-  --background: #5d798150;
-  --primary: #8fb3ff;
+  --background: #5d79811e; /* Contrast checked*/
+  --primary: rgb(6 1 22 / 68%); /* Contrast checked */
   --secondary: #bac5db;
-  --accent: rgb(45, 61, 57);
+  --accent: rgb(3, 11, 54);
 
   color: var(--accent);
 }
@@ -47,7 +52,7 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 300;
   font-family: inherit;
   background-color: rgba(212, 203, 203, 0.253);
