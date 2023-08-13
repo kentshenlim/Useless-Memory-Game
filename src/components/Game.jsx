@@ -36,6 +36,18 @@ export default function Game() {
           nameStr="Voltorb"
         />
         <PokemonCard
+          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/358.gif"
+          nameStr="Voltorb"
+        />
+        <PokemonCard
+          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
+          nameStr="Voltorb"
+        />
+        <PokemonCard
+          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
+          nameStr="Voltorb"
+        />
+        <PokemonCard
           imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
           nameStr="Voltorb"
         />

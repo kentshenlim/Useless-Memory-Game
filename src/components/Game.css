@@ -6,13 +6,15 @@
   flex-direction: column;
   justify-content: space-between;
   user-select: none;
+  gap: 1rem;
 }
 
 /* General -------------------------------------------------------------------*/
 /* Shiny borders and filtered background */
 .game-navbar p,
 .score-wrapper > *,
-.rem-count {
+.rem-count,
+.pokemon-card-wrapper {
   background-color: var(--background2); /* Can overwrite with different color */
   backdrop-filter: blur(5px);
   border-radius: 0.5rem;
@@ -82,11 +84,18 @@
 
 /* Card table ----------------------------------------------------------------*/
 .card-table {
-  border: solid red 3px;
   width: 70%;
+  min-width: 500px;
+  min-height: 100px;
   margin: 0 auto;
   height: 500px; /* Must specify for handling overflow */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  align-items: center;
+  justify-items: center;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
   overflow-y: auto;
+  overflow-x: hidden; /* In case pokemon image too wide */
+  padding: 0.5rem;
 }
