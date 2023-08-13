@@ -86,16 +86,17 @@
 .card-table {
   width: 70%;
   min-width: 500px;
-  min-height: 100px;
+  min-height: 140px;
   margin: 0 auto;
   height: 500px; /* Must specify for handling overflow */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   align-items: center;
+  align-content: start;
   justify-items: center;
   column-gap: 1.5rem;
   row-gap: 1.5rem;
   overflow-y: auto;
   overflow-x: hidden; /* In case pokemon image too wide */
-  padding: 0.5rem;
+  padding: 2rem;
 }
