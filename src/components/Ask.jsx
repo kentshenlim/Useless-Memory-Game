@@ -25,10 +25,13 @@ export default function Ask() {
           <span>m</span>
         </div>
         <div className="one-word">
-          <span>re</span>
+          <span>Re</span>
           {cNode}
           <span>all</span>
         </div>
+      </div>
+      <div className="ask-des-wrapper">
+        <p>Don&#39;t select Pokémon chosen before!</p>
       </div>
       <div className="ask-difficulty-wrapper">
         <div className="radio-wrapper">
@@ -45,8 +48,14 @@ export default function Ask() {
         </div>
       </div>
       <div className="ask-infos-wrapper">
-        <button>Start</button>
-        <button>GitHub</button>
+        <button>
+          <ion-icon name="play-circle-outline"></ion-icon>
+          <p>Start</p>
+        </button>
+        <button>
+          <ion-icon name="logo-github"></ion-icon>
+          <p>GitHub</p>
+        </button>
       </div>
     </main>
   );
