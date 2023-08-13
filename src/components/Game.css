@@ -1,0 +1,15 @@
+.game-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+
+.card-table {
+  border: solid red 3px;
+  width: 70%;
+  margin: 0 auto;
+  height: 500px; /* Must specify for handling overflow */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  overflow-y: auto;
+}
