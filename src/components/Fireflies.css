@@ -31,7 +31,7 @@
 }
 
 .firefly::before {
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0.4;
   animation: drift ease alternate infinite;
 }

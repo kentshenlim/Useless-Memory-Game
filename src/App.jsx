@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="app-wrapper">
       <Fireflies number={5} />
-      {/* <Ask /> */}
+      <Ask />
       {/* <Loading /> */}
-      <Game />
+      {/* <Game /> */}
     </div>
   );
 }
