@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './Game.css';
 import PropTypes from 'prop-types';
 import PokemonCard from './PokemonCard';
 import chingling from '../assets/img/chingling.svg';
 import shuffle from '../utils/shuffle';
+import SoundContext from './SoundContext';
 
 export default function Game({
   setStatus,
@@ -15,11 +16,14 @@ export default function Game({
   setBestScore,
 }) {
   console.log('game');
+  const sound = useContext(SoundContext);
   const [selected, setSelected] = useState(new Set());
 
   function handleClickCard(id) {
-    if (selected.has(id)) setStatus('gameOver');
-    else {
+    if (selected.has(id)) {
+      sound.error();
+      setStatus('gameOver');
+    } else {
       const newArray = Array.from(selected);
       newArray.push(id);
       setSelected(new Set(newArray));
@@ -28,8 +32,13 @@ export default function Game({
         if (bestScore == score) return 1 + bestScore; // Snapshot same
         return bestScore;
       });
-      if (selected.size === pokemonList.length - 1) setStatus('gameWon');
-      else setPokemonList(shuffle(pokemonList)); // Game continues
+      if (selected.size === pokemonList.length - 1) {
+        sound.level();
+        setStatus('gameWon');
+      } else {
+        sound.save();
+        setPokemonList(shuffle(pokemonList)); // Game continues
+      }
     }
   }
 

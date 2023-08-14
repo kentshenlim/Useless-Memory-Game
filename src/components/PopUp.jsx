@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import './PopUp.css';
 import PropTypes from 'prop-types';
+import SoundContext from './SoundContext';
 
 export default function PopUp({
   description,
@@ -9,12 +11,15 @@ export default function PopUp({
   setStatus,
   setScore,
 }) {
+  const sound = useContext(SoundContext);
   function handleClickHome() {
+    sound.close();
     setStatus('asking');
     if (status === 'gameOver') setScore(0);
   }
 
   function handleClickPlayAgain() {
+    sound.select();
     setStatus('loading'); // Game demounted, hence reloading all Pokemon
     if (status === 'gameOver') setScore(0);
   }

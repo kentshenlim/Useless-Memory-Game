@@ -23,11 +23,13 @@ export default function Ask({ setStatus, difficulty, setDifficulty }) {
 
   function handleClickStart() {
     setStatus('loading');
+    sound.enter();
   }
 
   function handleClickGitHub() {
     const url = 'https://www.google.com/';
     window.open(url, '_blank');
+    sound.door();
   }
 
   return (
