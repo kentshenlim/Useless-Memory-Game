@@ -6,6 +6,11 @@ import t from '../assets/img/t.gif';
 import PropTypes from 'prop-types';
 import './Ask.css';
 
+const unownImg = [a, c, e, t];
+const [aNode, cNode, eNode, tNode] = unownImg.map((imgSrc, idx) => (
+  <Unown imgSrc={imgSrc} key={idx} /> // Will not change array during runtime, so accept idx as key
+));
+
 export default function Ask({ setStatus, difficulty, setDifficulty }) {
   console.log('ask');
   function handleChangeDifficulty(e) {
@@ -21,10 +26,6 @@ export default function Ask({ setStatus, difficulty, setDifficulty }) {
     window.open(url, '_blank');
   }
 
-  const unownImg = [a, c, e, t];
-  const [aNode, cNode, eNode, tNode] = unownImg.map((imgSrc, idx) => (
-    <Unown imgSrc={imgSrc} key={idx} /> // Will not change array during runtime, so accept idx as key
-  ));
   return (
     <main className="ask-main-wrapper">
       <div className="ask-title-wrapper">
