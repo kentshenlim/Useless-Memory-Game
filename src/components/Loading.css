@@ -5,6 +5,7 @@
 .loading-wrapper img {
   border-radius: 50%;
   width: 10rem;
+  box-shadow: 0px 0px 20px #64dbff;
 }
 
 .loading-dots {
