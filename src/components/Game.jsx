@@ -16,7 +16,7 @@ export default function Game({
   const [selected, setSelected] = useState(new Set());
 
   function handleClickCard(id) {
-    if (selected.has(id)) console.log('gg');
+    if (selected.has(id)) setStatus('gameOver');
     else {
       const newArray = Array.from(selected);
       newArray.push(id);
@@ -26,6 +26,7 @@ export default function Game({
         return bestScore;
       });
       setSelected(new Set(newArray));
+      if (selected.size === pokemonList.length - 1) setStatus('gameWon');
     }
   }
 
