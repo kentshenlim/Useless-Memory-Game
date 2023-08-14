@@ -20,7 +20,7 @@ function App() {
           setDifficulty={setDifficulty}
         />
       ) : status == 'loading' ? (
-        <Loading />
+        <Loading setStatus={setStatus} difficulty={difficulty} />
       ) : (
         <Game />
       )}
