@@ -8,7 +8,7 @@ import { useState } from 'react';
 function App() {
   console.log('app');
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
-  const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming'
+  const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
   const [pokemonList, setPokemonList] = useState([]);
 
   return (

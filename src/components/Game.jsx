@@ -6,8 +6,24 @@ import './Game.css';
 
 export default function Game({ setStatus, pokemonList, setPokemonList }) {
   console.log('game');
+  const [selected, setSelected] = useState(new Set());
+
+  function handleClickCard(id) {
+    if (selected.has(id)) console.log('gg');
+    else {
+      const newArray = Array.from(selected);
+      newArray.push(id);
+      setSelected(new Set(newArray));
+    }
+  }
+
   const arrJSX = pokemonList.map((obj) => (
-    <PokemonCard key={obj.id} imgSrc={obj.imgSrc} nameStr={obj.name} />
+    <PokemonCard
+      key={obj.id}
+      imgSrc={obj.imgSrc}
+      nameStr={obj.name}
+      handleClick={() => handleClickCard(obj.id)}
+    />
   ));
 
   return (
@@ -33,7 +49,8 @@ export default function Game({ setStatus, pokemonList, setPokemonList }) {
         </div>
         <div className="rem-count">
           <span>Remaining&#58; </span>
-          <span>0</span>&#47;<span>10</span>
+          <span>{pokemonList.length - selected.size}</span>&#47;
+          <span>{pokemonList.length}</span>
         </div>
       </div>
 
