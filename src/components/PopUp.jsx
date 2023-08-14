@@ -15,7 +15,7 @@ export default function PopUp({
   }
 
   function handleClickPlayAgain() {
-    setStatus('loading');
+    setStatus('loading'); // Game demounted, hence reloading all Pokemon
     if (status === 'gameOver') setScore(0);
   }
 

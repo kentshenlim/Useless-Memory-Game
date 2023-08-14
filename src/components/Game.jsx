@@ -2,11 +2,13 @@ import PokemonCard from './PokemonCard';
 import chingling from '../assets/img/chingling.svg';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import shuffle from '../utils/shuffle';
 import './Game.css';
 
 export default function Game({
   setStatus,
   pokemonList,
+  setPokemonList,
   score,
   setScore,
   bestScore,
@@ -20,13 +22,14 @@ export default function Game({
     else {
       const newArray = Array.from(selected);
       newArray.push(id);
+      setSelected(new Set(newArray));
       setScore((score) => score + 1);
       setBestScore((bestScore) => {
         if (bestScore == score) return 1 + bestScore; // Snapshot same
         return bestScore;
       });
-      setSelected(new Set(newArray));
       if (selected.size === pokemonList.length - 1) setStatus('gameWon');
+      else setPokemonList(shuffle(pokemonList)); // Game continues
     }
   }
 
@@ -75,6 +78,7 @@ export default function Game({
 Game.propTypes = {
   setStatus: PropTypes.func.isRequired,
   pokemonList: PropTypes.array.isRequired,
+  setPokemonList: PropTypes.func.isRequired,
   score: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired,
   bestScore: PropTypes.number.isRequired,

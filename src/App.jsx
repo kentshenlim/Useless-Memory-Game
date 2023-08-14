@@ -35,6 +35,7 @@ function App() {
         <Game
           setStatus={setStatus}
           pokemonList={pokemonList}
+          setPokemonList={setPokemonList}
           score={score}
           setScore={setScore}
           bestScore={bestScore}
