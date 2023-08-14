@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import './Unown.css';
+import PropTypes from 'prop-types';
 
 export default function Unown({ imgSrc }) {
   return (

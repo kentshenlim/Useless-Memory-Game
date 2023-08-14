@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import fetchRequiredPokemon from '../utils/fetchRequiredPokemon';
-import lapras from '../assets/img/lapras.gif';
 import './Loading.css';
 import PropTypes from 'prop-types';
+import fetchRequiredPokemon from '../utils/fetchRequiredPokemon';
+import lapras from '../assets/img/lapras.gif';
 
 const map = { easy: 4, medium: 8, hard: 12 }; // difficulty => fetch count
 

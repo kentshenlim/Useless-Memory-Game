@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import './PokemonCard.css';
+import PropTypes from 'prop-types';
 
 export default function PokemonCard({ imgSrc, nameStr, handleClick }) {
   return (

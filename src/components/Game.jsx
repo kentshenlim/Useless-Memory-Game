@@ -1,9 +1,9 @@
+import { useState } from 'react';
+import './Game.css';
+import PropTypes from 'prop-types';
 import PokemonCard from './PokemonCard';
 import chingling from '../assets/img/chingling.svg';
-import PropTypes from 'prop-types';
-import { useState } from 'react';
 import shuffle from '../utils/shuffle';
-import './Game.css';
 
 export default function Game({
   setStatus,
