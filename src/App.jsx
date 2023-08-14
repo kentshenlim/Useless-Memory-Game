@@ -11,7 +11,7 @@ import { useState } from 'react';
 function App() {
   console.log('app');
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
-  const [status, setStatus] = useState('gameWon'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
+  const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
   const [pokemonList, setPokemonList] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
