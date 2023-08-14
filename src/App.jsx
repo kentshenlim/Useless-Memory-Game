@@ -10,6 +10,8 @@ function App() {
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
   const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
   const [pokemonList, setPokemonList] = useState([]);
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   return (
     <div className="app-wrapper">
@@ -30,7 +32,10 @@ function App() {
         <Game
           setStatus={setStatus}
           pokemonList={pokemonList}
-          setPokemonList={setPokemonList}
+          score={score}
+          setScore={setScore}
+          bestScore={bestScore}
+          setBestScore={setBestScore}
         />
       )}
     </div>

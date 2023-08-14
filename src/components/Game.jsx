@@ -4,7 +4,14 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import './Game.css';
 
-export default function Game({ setStatus, pokemonList, setPokemonList }) {
+export default function Game({
+  setStatus,
+  pokemonList,
+  score,
+  setScore,
+  bestScore,
+  setBestScore,
+}) {
   console.log('game');
   const [selected, setSelected] = useState(new Set());
 
@@ -13,6 +20,11 @@ export default function Game({ setStatus, pokemonList, setPokemonList }) {
     else {
       const newArray = Array.from(selected);
       newArray.push(id);
+      setScore((score) => score + 1);
+      setBestScore((bestScore) => {
+        if (bestScore == score) return 1 + bestScore; // Snapshot same
+        return bestScore;
+      });
       setSelected(new Set(newArray));
     }
   }
@@ -41,10 +53,10 @@ export default function Game({ setStatus, pokemonList, setPokemonList }) {
       <div className="game-progress">
         <div className="score-wrapper">
           <div>
-            Score&#58; <span>0</span>
+            Score&#58; <span>{score}</span>
           </div>
           <div>
-            Best&#58; <span>0</span>
+            Best&#58; <span>{bestScore}</span>
           </div>
         </div>
         <div className="rem-count">
@@ -62,5 +74,8 @@ export default function Game({ setStatus, pokemonList, setPokemonList }) {
 Game.propTypes = {
   setStatus: PropTypes.func.isRequired,
   pokemonList: PropTypes.array.isRequired,
-  setPokemonList: PropTypes.func.isRequired,
+  score: PropTypes.number.isRequired,
+  setScore: PropTypes.func.isRequired,
+  bestScore: PropTypes.number.isRequired,
+  setBestScore: PropTypes.func.isRequired,
 };
