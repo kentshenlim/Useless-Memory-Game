@@ -1,0 +1,227 @@
+/* Based on https://codepen.io/mikegolus/pen/Jegvym*/
+.fireflies-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* --fireflies-body-color: #64dbff; */
+  --fireflies-border-color: #b3f7d5;
+  --fireflies-body-color: rgba(158, 233, 137, 0.986);
+  --fireflies-size: 0.7vw;
+}
+
+.firefly {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: var(--fireflies-size);
+  height: var(--fireflies-size);
+  margin: -0.2vw 0 0 9.8vw;
+  animation: ease 200s alternate infinite;
+  pointer-events: none;
+}
+
+.firefly::before,
+.firefly::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-origin: -10vw;
+}
+
+.firefly::before {
+  background: black;
+  opacity: 0.4;
+  animation: drift ease alternate infinite;
+}
+
+.firefly::after {
+  background: var(--fireflies-body-color);
+  opacity: 0;
+  box-shadow: 0 0 0vw 0vw var(--fireflies-border-color);
+  animation: drift ease alternate infinite, flash ease infinite;
+}
+
+.firefly {
+  --step: 13;
+  --rotation-speed: 12s;
+}
+
+@keyframes drift {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flash {
+  0%,
+  30%,
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 0vw 0vw var(--fireflies-border-color);
+  }
+  5% {
+    opacity: 1;
+    box-shadow: 0 0 2vw 0.4vw var(--fireflies-border-color);
+  }
+}
+
+/* Move keyframes generated randomly -----------------------------------------*/
+@keyframes move1 {
+  0% {
+    transform: translateX(-20vw) translateY(10vh) scale(0.6);
+  }
+  25% {
+    transform: translateX(-30vw) translateY(-20vh) scale(0.8);
+  }
+  50% {
+    transform: translateX(-10vw) translateY(5vh) scale(1);
+  }
+  75% {
+    transform: translateX(-50vw) translateY(-15vh) scale(0.7);
+  }
+  100% {
+    transform: translateX(-60vw) translateY(-20vh) scale(0.9);
+  }
+}
+
+.firefly:nth-child(1) {
+  animation-name: move1;
+}
+
+.firefly:nth-child(1)::before {
+  animation-duration: 14s;
+}
+
+.firefly:nth-child(1)::after {
+  animation-duration: 14s, 7100ms;
+  animation-delay: 0ms, 700ms;
+}
+
+@keyframes move2 {
+  0% {
+    transform: translateX(70vw) translateY(-15vh) scale(0.8);
+  }
+  25% {
+    transform: translateX(60vw) translateY(25vh) scale(1);
+  }
+  50% {
+    transform: translateX(40vw) translateY(10vh) scale(1.2);
+  }
+  75% {
+    transform: translateX(50vw) translateY(-5vh) scale(0.9);
+  }
+  100% {
+    transform: translateX(40vw) translateY(25vh) scale(1.1);
+  }
+}
+
+.firefly:nth-child(2) {
+  animation-name: move2;
+}
+
+.firefly:nth-child(2)::before {
+  animation-duration: 13s;
+}
+
+.firefly:nth-child(2)::after {
+  animation-duration: 13s, 6800ms;
+  animation-delay: 0ms, 560ms;
+}
+
+@keyframes move3 {
+  0% {
+    transform: translateX(85vw) translateY(-60vh) scale(0.4);
+  }
+  25% {
+    transform: translateX(95vw) translateY(-40vh) scale(0.6);
+  }
+  50% {
+    transform: translateX(90vw) translateY(-20vh) scale(0.8);
+  }
+  75% {
+    transform: translateX(75vw) translateY(-10vh) scale(1.2);
+  }
+  100% {
+    transform: translateX(60vw) translateY(-30vh) scale(0.7);
+  }
+}
+
+.firefly:nth-child(3) {
+  animation-name: move3;
+}
+
+.firefly:nth-child(3)::before {
+  animation-duration: 20s;
+}
+
+.firefly:nth-child(3)::after {
+  animation-duration: 20s, 6600ms;
+  animation-delay: 0ms, 750ms;
+}
+
+@keyframes move4 {
+  0% {
+    transform: translateX(-15vw) translateY(15vh) scale(0.6);
+  }
+  25% {
+    transform: translateX(-5vw) translateY(-5vh) scale(0.8);
+  }
+  50% {
+    transform: translateX(10vw) translateY(20vh) scale(1);
+  }
+  75% {
+    transform: translateX(-20vw) translateY(-15vh) scale(0.7);
+  }
+  100% {
+    transform: translateX(5vw) translateY(-35vh) scale(0.9);
+  }
+}
+
+.firefly:nth-child(4) {
+  animation-name: move4;
+}
+
+.firefly:nth-child(4)::before {
+  animation-duration: 12s;
+}
+
+.firefly:nth-child(4)::after {
+  animation-duration: 12s, 5400ms;
+  animation-delay: 0ms, 630ms;
+}
+
+@keyframes move5 {
+  0% {
+    transform: translateX(-30vw) translateY(25vh) scale(0.8);
+  }
+  25% {
+    transform: translateX(-20vw) translateY(-20vh) scale(1);
+  }
+  50% {
+    transform: translateX(-5vw) translateY(10vh) scale(1.2);
+  }
+  75% {
+    transform: translateX(15vw) translateY(-5vh) scale(0.9);
+  }
+  100% {
+    transform: translateX(15vw) translateY(-20vh) scale(1.2);
+  }
+}
+
+.firefly:nth-child(5) {
+  animation-name: move5;
+}
+
+.firefly:nth-child(5)::before {
+  animation-duration: 18s;
+}
+
+.firefly:nth-child(5)::after {
+  animation-duration: 18s, 5900ms;
+  animation-delay: 0ms, 480ms;
+}

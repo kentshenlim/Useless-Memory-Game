@@ -17,7 +17,6 @@
 ## TODO
 
 TODO: bgm Eterna Forest
-TODO: add fireflies background
 TODO: loading using script3.js, animated, welcome screen using unown static
 TODO: local storage for highest score
 TODO: bgm pop up when switch
