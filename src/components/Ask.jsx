@@ -1,10 +1,12 @@
+import { useContext } from 'react';
+import './Ask.css';
+import PropTypes from 'prop-types';
 import Unown from './Unown';
 import a from '../assets/img/a.gif';
 import c from '../assets/img/c.gif';
 import e from '../assets/img/e.gif';
 import t from '../assets/img/t.gif';
-import PropTypes from 'prop-types';
-import './Ask.css';
+import SoundContext from './SoundContext';
 
 const unownImg = [a, c, e, t];
 const [aNode, cNode, eNode, tNode] = unownImg.map((imgSrc, idx) => (
@@ -13,8 +15,10 @@ const [aNode, cNode, eNode, tNode] = unownImg.map((imgSrc, idx) => (
 
 export default function Ask({ setStatus, difficulty, setDifficulty }) {
   console.log('ask');
+  const sound = useContext(SoundContext);
   function handleChangeDifficulty(e) {
     setDifficulty(e.target.value);
+    sound.a();
   }
 
   function handleClickStart() {
