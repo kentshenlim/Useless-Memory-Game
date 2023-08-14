@@ -6,7 +6,7 @@
   /* --fireflies-body-color: #64dbff; */
   --fireflies-border-color: #b3f7d5;
   --fireflies-body-color: rgba(158, 233, 137, 0.986);
-  --fireflies-size: 0.7vw;
+  --fireflies-size: max(0.7vw, 10px);
 }
 
 .firefly {
@@ -224,4 +224,97 @@
 .firefly:nth-child(5)::after {
   animation-duration: 18s, 5900ms;
   animation-delay: 0ms, 480ms;
+}
+
+@keyframes move6 {
+  0% {
+    transform: translateX(-30vw) translateY(-70vh) scale(0.5);
+  }
+  25% {
+    transform: translateX(20vw) translateY(-60vh) scale(0.6);
+  }
+  50% {
+    transform: translateX(-10vw) translateY(-40vh) scale(0.7);
+  }
+  75% {
+    transform: translateX(15vw) translateY(-20vh) scale(0.8);
+  }
+  100% {
+    transform: translateX(0vw) translateY(-50vh) scale(0.9);
+  }
+}
+
+.firefly:nth-child(6) {
+  animation-name: move6;
+}
+
+.firefly:nth-child(6)::before {
+  animation-duration: 12s;
+}
+
+.firefly:nth-child(6)::after {
+  animation-duration: 12s, 6000ms;
+  animation-delay: 0ms, 800ms;
+}
+
+@keyframes move7 {
+  0% {
+    transform: translateX(50vw) translateY(-50vh) scale(0.6);
+  }
+  25% {
+    transform: translateX(40vw) translateY(20vh) scale(0.7);
+  }
+  50% {
+    transform: translateX(30vw) translateY(-10vh) scale(0.8);
+  }
+  75% {
+    transform: translateX(20vw) translateY(30vh) scale(0.9);
+  }
+  100% {
+    transform: translateX(10vw) translateY(10vh) scale(1);
+  }
+}
+
+.firefly:nth-child(7) {
+  animation-name: move7;
+}
+
+.firefly:nth-child(7)::before {
+  animation-duration: 15s;
+}
+
+.firefly:nth-child(7)::after {
+  animation-duration: 15s, 5500ms;
+  animation-delay: 0ms, 700ms;
+}
+
+@keyframes move8 {
+  0% {
+    transform: translateX(-20vw) translateY(40vh) scale(0.7);
+  }
+  25% {
+    transform: translateX(30vw) translateY(30vh) scale(0.8);
+  }
+  50% {
+    transform: translateX(-10vw) translateY(20vh) scale(0.9);
+  }
+  75% {
+    transform: translateX(15vw) translateY(10vh) scale(1);
+  }
+  100% {
+    transform: translateX(0vw) translateY(30vh) scale(1.1);
+  }
+}
+
+.firefly:nth-child(8) {
+  animation-name: move8;
+}
+
+.firefly:nth-child(8)::before {
+  animation-duration: 10s;
+}
+
+.firefly:nth-child(8)::after {
+  animation-duration: 10s, 4000ms;
+  animation-delay: 0ms, 600ms;
 }

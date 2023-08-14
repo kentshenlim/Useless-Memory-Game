@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <Fireflies number={5} />
+      <Fireflies number={8} />
       {status == 'asking' ? (
         <Ask
           setStatus={setStatus}
