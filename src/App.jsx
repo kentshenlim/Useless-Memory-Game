@@ -11,7 +11,7 @@ import { useState } from 'react';
 function App() {
   console.log('app');
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
-  const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
+  const [status, setStatus] = useState('gameWon'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
   const [pokemonList, setPokemonList] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="app-wrapper">
       <Fireflies number={8} />
-      <PopUp description="Well Done" imgSrc={trolling} finalScore={score} />
       {status == 'asking' ? (
         <Ask
           setStatus={setStatus}
@@ -40,6 +39,20 @@ function App() {
           setScore={setScore}
           bestScore={bestScore}
           setBestScore={setBestScore}
+        />
+      )}
+      {status === 'gameWon' && (
+        <PopUp
+          description="Pika-BOO! Well done!"
+          imgSrc={trolling}
+          finalScore={score}
+        />
+      )}
+      {status === 'gameOver' && (
+        <PopUp
+          description="Gray tears, bright determination. Retry and conquer!"
+          imgSrc={crying}
+          finalScore={score}
         />
       )}
     </div>
