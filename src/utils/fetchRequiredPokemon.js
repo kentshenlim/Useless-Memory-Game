@@ -4,6 +4,7 @@ async function fetchOnePokemonNameURL(id) {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
   const response = await fetch(url);
   const result = await response.json();
+  console.log('test2');
   return {
     id: nanoid(),
     name: result.name,
@@ -22,6 +23,7 @@ async function fetchRequiredPokemon(fetchCount, fetchedIDUsed) {
     result[i] = fetchOnePokemonNameURL(id);
   }
   const finalRes = await Promise.all(result);
+  console.log('test1')
   return finalRes;
 }
 

@@ -1,7 +1,10 @@
 import './App.css';
+import trolling from './assets/img/trolling.gif';
+import crying from './assets/img/crying.gif';
 import Ask from './components/Ask';
 import Loading from './components/Loading';
 import Game from './components/Game';
+import PopUp from './components/PopUp';
 import Fireflies from './components/Fireflies';
 import { useState } from 'react';
 
@@ -16,6 +19,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <Fireflies number={8} />
+      <PopUp description="Well Done" imgSrc={trolling} finalScore={score} />
       {status == 'asking' ? (
         <Ask
           setStatus={setStatus}
