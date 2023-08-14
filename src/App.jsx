@@ -46,6 +46,9 @@ function App() {
           description="Pika-BOO! Well done!"
           imgSrc={trolling}
           finalScore={score}
+          status={status}
+          setStatus={setStatus}
+          setScore={setScore}
         />
       )}
       {status === 'gameOver' && (
@@ -53,6 +56,9 @@ function App() {
           description="Gray tears, bright determination. Retry and conquer!"
           imgSrc={crying}
           finalScore={score}
+          status={status}
+          setStatus={setStatus}
+          setScore={setScore}
         />
       )}
     </div>

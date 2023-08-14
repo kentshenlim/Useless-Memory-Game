@@ -2,7 +2,7 @@
   position: absolute;
   width: 40%;
   min-width: 400px;
-  height: 350px;
+  height: 400px;
   z-index: 2;
   background-color: #78a2ade1;
   border-radius: 1rem;
@@ -20,7 +20,7 @@
 }
 
 .pop-up-wrapper > h4 {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 .pop-up-wrapper > p {
   font-size: 1.25rem;

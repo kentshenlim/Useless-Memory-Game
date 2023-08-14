@@ -1,7 +1,24 @@
 import './PopUp.css';
 import PropTypes from 'prop-types';
 
-export default function PopUp({ description, imgSrc, finalScore }) {
+export default function PopUp({
+  description,
+  imgSrc,
+  finalScore,
+  status,
+  setStatus,
+  setScore,
+}) {
+  function handleClickHome() {
+    setStatus('asking');
+    if (status === 'gameOver') setScore(0);
+  }
+
+  function handleClickPlayAgain() {
+    setStatus('loading');
+    if (status === 'gameOver') setScore(0);
+  }
+
   return (
     <>
       <div className="pop-up-wrapper">
@@ -9,13 +26,13 @@ export default function PopUp({ description, imgSrc, finalScore }) {
         <img src={imgSrc} alt="Result image" />
         <p>{`Your final score is ${finalScore}`}</p>
         <div className="pop-up-buttons">
-          <button>
+          <button type="button" onClick={handleClickPlayAgain}>
             <ion-icon name="refresh-circle-outline"></ion-icon>
             <p>Play Again</p>
           </button>
-          <button>
-            <ion-icon name="close-circle-outline"></ion-icon>
-            <p>Quit</p>
+          <button type="button" onClick={handleClickHome}>
+            <ion-icon name="home-outline"></ion-icon>
+            <p>Home</p>
           </button>
         </div>
       </div>
@@ -28,4 +45,7 @@ PopUp.propTypes = {
   description: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   finalScore: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
+  setStatus: PropTypes.func.isRequired,
+  setScore: PropTypes.func.isRequired,
 };

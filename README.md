@@ -17,6 +17,6 @@
 ## TODO
 
 TODO: bgm Eterna Forest
-TODO: loading using script3.js, animated, welcome screen using unown static
+TODO: loading issue: loading screen should be displayed until all images loaded
 TODO: local storage for highest score
 TODO: bgm pop up when switch
