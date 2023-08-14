@@ -17,7 +17,7 @@ async function fetchRequiredPokemon(fetchCount, fetchedIDUsed) {
   const result = new Array(fetchCount);
   for (let i = 0; i < fetchCount; i += 1) {
     let id = Math.floor(Math.random() * 493) + 1;
-    while (fetchedIDUsed.has(id)) id = Math.floor(Math.random() * 493) + 1;
+    while (fetchedIDUsed.has(id) || id == 386) id = Math.floor(Math.random() * 493) + 1;
     fetchedIDUsed.add(id);
     result[i] = fetchOnePokemonNameURL(id);
   }
