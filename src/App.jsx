@@ -9,6 +9,8 @@ function App() {
   console.log('main');
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
   const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming'
+  const [pokemonList, setPokemonList] = useState([]);
+  console.log(pokemonList);
 
   return (
     <div className="app-wrapper">
@@ -20,7 +22,11 @@ function App() {
           setDifficulty={setDifficulty}
         />
       ) : status == 'loading' ? (
-        <Loading setStatus={setStatus} difficulty={difficulty} />
+        <Loading
+          setStatus={setStatus}
+          difficulty={difficulty}
+          setPokemonList={setPokemonList}
+        />
       ) : (
         <Game />
       )}

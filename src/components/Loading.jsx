@@ -1,36 +1,27 @@
+import { useEffect } from 'react';
+import fetchRequiredPokemon from '../utils/fetchRequiredPokemon';
 import lapras from '../assets/img/lapras.gif';
 import './Loading.css';
 import PropTypes from 'prop-types';
 
-export default function Loading({ setStatus, difficulty }) {
+export default function Loading({ setStatus, difficulty, setPokemonList }) {
   const map = { easy: 6, medium: 10, hard: 14 }; // difficulty => fetch count
   const fetchCount = map[difficulty];
-  const fetchedIDUsed = new Set();
+  console.log('12');
 
-  async function fetchOnePokemonNameURL(id) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
-    const response = await fetch(url);
-    const result = await response.json();
-    return {
-      name: result.name,
-      imgSrc:
-        result.sprites.versions['generation-v']['black-white'].animated
-          .front_default,
+  useEffect(() => {
+    let ignore = false;
+    const fetchedIDUsed = new Set();
+    const fetchAndSet = async () => {
+      const res = await fetchRequiredPokemon(fetchCount, fetchedIDUsed);
+      if (!ignore) {
+        setStatus('gaming');
+        setPokemonList(res);
+      }
     };
-  }
-
-  async function fetchRequiredPokemon() {
-    const result = new Array(fetchCount);
-    for (let i = 0; i < fetchCount; i += 1) {
-      let id = Math.floor(Math.random() * 493) + 1;
-      while (fetchedIDUsed.has(id)) id = Math.floor(Math.random() * 493) + 1;
-      fetchedIDUsed.add(id);
-      result[i] = fetchOnePokemonNameURL(id);
-    }
-    await Promise.all(result);
-    console.log(result);
-    return result;
-  }
+    fetchAndSet();
+    return () => (ignore = true);
+  }, [setStatus, setPokemonList, fetchCount]);
 
   return (
     <main className="loading-wrapper">
@@ -50,4 +41,5 @@ export default function Loading({ setStatus, difficulty }) {
 Loading.propTypes = {
   setStatus: PropTypes.func.isRequired,
   difficulty: PropTypes.string.isRequired,
+  setPokemonList: PropTypes.func.isRequired,
 };
