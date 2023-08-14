@@ -6,9 +6,18 @@ import t from '../assets/img/t.gif';
 import PropTypes from 'prop-types';
 import './Ask.css';
 
-export default function Ask({ difficulty, setDifficulty }) {
+export default function Ask({ setStatus, difficulty, setDifficulty }) {
   function handleChangeDifficulty(e) {
     setDifficulty(e.target.value);
+  }
+
+  function handleClickStart() {
+    setStatus('loading');
+  }
+
+  function handleClickGitHub() {
+    const url = 'https://www.google.com/';
+    window.open(url, '_blank');
   }
 
   const unownImg = [a, c, e, t];
@@ -77,11 +86,11 @@ export default function Ask({ difficulty, setDifficulty }) {
         </div>
       </div>
       <div className="ask-infos-wrapper">
-        <button type="button">
+        <button type="button" onClick={handleClickStart}>
           <ion-icon name="play-circle-outline"></ion-icon>
           <p>Start</p>
         </button>
-        <button type="button">
+        <button type="button" onClick={handleClickGitHub}>
           <ion-icon name="logo-github"></ion-icon>
           <p>GitHub</p>
         </button>
@@ -91,6 +100,7 @@ export default function Ask({ difficulty, setDifficulty }) {
 }
 
 Ask.propTypes = {
+  setStatus: PropTypes.func.isRequired,
   difficulty: PropTypes.string.isRequired,
   setDifficulty: PropTypes.func.isRequired,
 };

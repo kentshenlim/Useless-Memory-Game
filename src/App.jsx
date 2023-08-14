@@ -7,14 +7,23 @@ import { useState } from 'react';
 
 function App() {
   console.log('main');
-  const [difficulty, setDifficulty] = useState('medium');
+  const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
+  const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming'
 
   return (
     <div className="app-wrapper">
       <Fireflies number={5} />
-      <Ask difficulty={difficulty} setDifficulty={setDifficulty} />
-      {/* <Loading /> */}
-      {/* <Game /> */}
+      {status == 'asking' ? (
+        <Ask
+          setStatus={setStatus}
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
+        />
+      ) : status == 'loading' ? (
+        <Loading />
+      ) : (
+        <Game />
+      )}
     </div>
   );
 }
