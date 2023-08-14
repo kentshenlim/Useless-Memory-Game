@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import './Ask.css';
 
 export default function Ask({ setStatus, difficulty, setDifficulty }) {
+  console.log('ask');
   function handleChangeDifficulty(e) {
     setDifficulty(e.target.value);
   }

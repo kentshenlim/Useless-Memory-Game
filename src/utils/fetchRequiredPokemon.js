@@ -1,8 +1,11 @@
+import { nanoid } from "nanoid";
+
 async function fetchOnePokemonNameURL(id) {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
   const response = await fetch(url);
   const result = await response.json();
   return {
+    id: nanoid(),
     name: result.name,
     imgSrc:
       result.sprites.versions['generation-v']['black-white'].animated

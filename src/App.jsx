@@ -6,11 +6,10 @@ import Fireflies from './components/Fireflies';
 import { useState } from 'react';
 
 function App() {
-  console.log('main');
+  console.log('app');
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
   const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming'
   const [pokemonList, setPokemonList] = useState([]);
-  console.log(pokemonList);
 
   return (
     <div className="app-wrapper">
@@ -28,7 +27,11 @@ function App() {
           setPokemonList={setPokemonList}
         />
       ) : (
-        <Game />
+        <Game
+          setStatus={setStatus}
+          pokemonList={pokemonList}
+          setPokemonList={setPokemonList}
+        />
       )}
     </div>
   );

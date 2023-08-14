@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 export default function Loading({ setStatus, difficulty, setPokemonList }) {
   const map = { easy: 6, medium: 10, hard: 14 }; // difficulty => fetch count
   const fetchCount = map[difficulty];
-  console.log('12');
+  console.log('loading');
 
   useEffect(() => {
     let ignore = false;

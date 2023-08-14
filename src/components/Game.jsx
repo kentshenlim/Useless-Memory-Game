@@ -1,8 +1,14 @@
 import PokemonCard from './PokemonCard';
 import chingling from '../assets/img/chingling.svg';
+import PropTypes from 'prop-types';
 import './Game.css';
 
-export default function Game() {
+export default function Game({ setStatus, pokemonList, setPokemonList }) {
+  console.log('game');
+  const arrJSX = pokemonList.map((obj) => (
+    <PokemonCard key={obj.id} imgSrc={obj.imgSrc} nameStr={obj.name} />
+  ));
+
   return (
     <div className="game-wrapper">
       <nav className="game-navbar">
@@ -30,48 +36,13 @@ export default function Game() {
         </div>
       </div>
 
-      <div className="card-table">
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Crabominable"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/358.gif"
-          nameStr="Voltorb"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Voltorb"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Voltorb"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Voltorb"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Voltorb"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Voltorb"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Voltorb"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Voltorb"
-        />
-        <PokemonCard
-          imgSrc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif"
-          nameStr="Voltorb"
-        />
-      </div>
+      <div className="card-table">{arrJSX}</div>
     </div>
   );
 }
+
+Game.propTypes = {
+  setStatus: PropTypes.func.isRequired,
+  pokemonList: PropTypes.array.isRequired,
+  setPokemonList: PropTypes.func.isRequired,
+};
