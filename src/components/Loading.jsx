@@ -8,7 +8,6 @@ const map = { easy: 4, medium: 8, hard: 12 }; // difficulty => fetch count
 
 export default function Loading({ setStatus, difficulty, setPokemonList }) {
   const fetchCount = map[difficulty];
-  console.log('loading');
 
   useEffect(() => {
     let ignore = false;

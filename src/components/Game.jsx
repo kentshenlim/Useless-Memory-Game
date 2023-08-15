@@ -15,7 +15,6 @@ export default function Game({
   bestScore,
   setBestScore,
 }) {
-  console.log('game');
   const sound = useContext(SoundContext);
   const [selected, setSelected] = useState(new Set());
 

@@ -15,7 +15,6 @@ import forestTheme from './assets/audio/forest_theme_normal.mp3';
 import forestThemeBrilliant from './assets/audio/forest_theme_brilliant.mp3';
 
 function App() {
-  console.log('app');
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
   const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
   const [pokemonList, setPokemonList] = useState([]);
@@ -38,7 +37,7 @@ function App() {
       audioNode.pause();
       audioNode.currentTime = 0;
     } else audioNode.play();
-  }, [isMuted, status]); // Might need to replay another song when state changed
+  }, [isMuted, status]); // Might need to replay another song when status changed
 
   return (
     <div className="app-wrapper">

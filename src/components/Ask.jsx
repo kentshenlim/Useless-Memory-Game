@@ -14,7 +14,6 @@ const [aNode, cNode, eNode, tNode] = unownImg.map((imgSrc, idx) => (
 ));
 
 export default function Ask({ setStatus, difficulty, setDifficulty }) {
-  console.log('ask');
   const sound = useContext(SoundContext);
   function handleChangeDifficulty(e) {
     setDifficulty(e.target.value);
