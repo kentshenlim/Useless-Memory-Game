@@ -12,6 +12,7 @@ import Fireflies from './components/Fireflies';
 import sound from './utils/sound';
 import SoundContext from './components/SoundContext';
 import forestTheme from './assets/audio/forest_theme_normal.mp3';
+import forestThemeBrilliant from './assets/audio/forest_theme_brilliant.mp3';
 
 function App() {
   console.log('app');
@@ -20,16 +21,16 @@ function App() {
   const [pokemonList, setPokemonList] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [bgm, setBgm] = useState(forestTheme);
   const [isMuted, setIsMuted] = useState(true);
 
   function handleClickAudioToggler() {
     setIsMuted(!isMuted);
-    if (isMuted) sound.chimecho();
+    if (isMuted)
+      sound.chimecho(); // Currently muted, icon is chimecho for unmute
     else sound.chingling();
   }
 
-  const bgmNode = useRef(null);
+  const bgmNode = useRef(null); // For direct DOM manipulation
 
   useEffect(() => {
     const audioNode = bgmNode.current;
@@ -37,13 +38,17 @@ function App() {
       audioNode.pause();
       audioNode.currentTime = 0;
     } else audioNode.play();
-  }, [isMuted]);
+  }, [isMuted, status]); // Might need to replay another song when state changed
 
   return (
     <div className="app-wrapper">
       <SoundContext.Provider value={sound}>
         <Fireflies number={8} />
-        <audio src={bgm} loop={true} ref={bgmNode}></audio>
+        <audio
+          src={status == 'asking' ? forestTheme : forestThemeBrilliant}
+          loop={true}
+          ref={bgmNode}
+        ></audio>
         <button
           className="audio-toggler"
           type="button"
