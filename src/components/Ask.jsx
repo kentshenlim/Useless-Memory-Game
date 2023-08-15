@@ -26,7 +26,7 @@ export default function Ask({ setStatus, difficulty, setDifficulty }) {
   }
 
   function handleClickGitHub() {
-    const url = 'https://www.google.com/';
+    const url = 'https://github.com/kentshenlim/Useless-Memory-Game';
     window.open(url, '_blank');
     sound.door();
   }
