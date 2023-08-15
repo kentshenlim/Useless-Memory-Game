@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
+import './media.css';
 import chingling from './assets/img/chingling.svg';
 import chimecho from './assets/img/chimecho.svg';
 import trolling from './assets/img/trolling.gif';

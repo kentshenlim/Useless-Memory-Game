@@ -1,0 +1,160 @@
+@media only screen and (max-width: 800px) {
+  .ask-main-wrapper {
+    min-width: 400px !important;
+    height: 350px !important;
+  }
+
+  .game-navbar p {
+    font-size: 1rem !important;
+  }
+
+  .game-progress,
+  .game-wrapper {
+    font-size: 0.75rem !important;
+  }
+
+  .rem-count {
+    margin-top: 0.5rem !important;
+  }
+
+  .card-table {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)) !important;
+    min-width: 400px !important;
+    width: 80% !important;
+  }
+
+  .pokemon-card-wrapper {
+    height: 100px !important;
+  }
+
+  .pokemon-card-wrapper > img {
+    height: 50px !important;
+  }
+
+  .pokemon-card-wrapper > p {
+    height: 1.5rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .pop-up-wrapper {
+    width: 50% !important;
+    min-width: 300px !important;
+    height: 300px !important;
+  }
+
+  .pop-up-wrapper * {
+    font-size: 1rem !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    min-width: 300px !important;
+  }
+
+  .ask-main-wrapper {
+    min-width: 300px !important;
+    height: 260px !important;
+  }
+
+  .ask-main-wrapper > * {
+    width: 100% !important;
+    min-width: 300px !important;
+  }
+
+  .ask-main-wrapper > *:first-child * {
+    font-size: 2rem !important;
+  }
+
+  .ask-main-wrapper > *:not(:first-child) * {
+    font-size: 1rem !important;
+  }
+
+  .game-wrapper {
+    padding: 1rem !important;
+    min-width: 300px !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+  }
+
+  .game-navbar p {
+    font-size: 0.75rem !important;
+    padding: 0.1rem !important;
+    width: 80% !important;
+    margin-left: 1rem !important;
+  }
+
+  .game-navbar {
+    justify-content: start !important;
+  }
+
+  .game-navbar > :first-child {
+    height: 2.5rem !important;
+  }
+
+  .audio-toggler {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  .game-progress,
+  .game-wrapper {
+    font-size: 0.7rem !important;
+  }
+
+  .game-progress {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .score-wrapper > *,
+  .rem-count {
+    padding: 0.25rem !important;
+  }
+
+  .score-wrapper {
+    width: 50% !important;
+    display: inline-block !important;
+    min-width: 0px !important;
+    margin: 0 !important;
+  }
+
+  .rem-count {
+    margin-top: 0 !important;
+  }
+
+  .card-table {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)) !important;
+    min-width: 275px !important;
+    width: 80% !important;
+    padding: 0.5rem !important;
+    column-gap: 0.5rem !important;
+    row-gap: 0.5rem !important;
+    height: auto !important;
+  }
+
+  .pokemon-card-wrapper {
+    height: 80px !important;
+  }
+
+  .pokemon-card-wrapper > img {
+    height: 40px !important;
+  }
+
+  .pokemon-card-wrapper > p {
+    height: 1rem !important;
+    font-size: 0.5rem !important;
+    font-weight: normal !important;
+  }
+
+  .pop-up-wrapper {
+    width: 80% !important;
+    min-width: 250px !important;
+    height: 300px !important;
+  }
+
+  .pop-up-wrapper * {
+    font-size: 0.8rem !important;
+  }
+}
