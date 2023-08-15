@@ -15,8 +15,8 @@ export default function Loading({ setStatus, difficulty, setPokemonList }) {
     const fetchAndSet = async () => {
       const res = await fetchRequiredPokemon(fetchCount, fetchedIDUsed);
       if (!ignore) {
-        setStatus('gaming');
         setPokemonList(res);
+        setStatus('gaming');
       }
     };
     fetchAndSet();

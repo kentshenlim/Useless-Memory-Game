@@ -25,7 +25,6 @@ function App() {
     return +previousBestScore;
   });
   const [isMuted, setIsMuted] = useState(true);
-  console.log(123);
 
   function handleClickAudioToggler() {
     setIsMuted(!isMuted);
