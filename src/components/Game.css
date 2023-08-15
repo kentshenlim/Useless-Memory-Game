@@ -31,23 +31,23 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center; /* Don't stretch, audio-toggler will get too big */
+  align-items: center; /* Don't stretch,.escape-rope will get too big */
 }
 
 .game-navbar > :first-child {
   position: absolute;
-  left: 0;
+  right: 0;
   height: 100%;
   padding: 0;
 }
 
-.game-navbar > .audio-toggler {
+.game-navbar > .escape-rope {
   border-radius: 50%;
   padding: 0.2rem;
   height: 3rem;
 }
 
-.game-navbar > .audio-toggler > img {
+.game-navbar > .escape-rope > img {
   height: 100%;
 }
 

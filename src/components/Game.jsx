@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import './Game.css';
 import PropTypes from 'prop-types';
 import PokemonCard from './PokemonCard';
-import chingling from '../assets/img/chingling.svg';
+import escapeRope from '../assets/img/escapeRope.png';
 import shuffle from '../utils/shuffle';
 import SoundContext from './SoundContext';
 
@@ -42,6 +42,12 @@ export default function Game({
     }
   }
 
+  function handleClickEscape() {
+    sound.flee();
+    setScore(0);
+    setStatus('asking');
+  }
+
   const arrJSX = pokemonList.map((obj) => (
     <PokemonCard
       key={obj.id}
@@ -54,8 +60,12 @@ export default function Game({
   return (
     <div className="game-wrapper">
       <nav className="game-navbar">
-        <button className="audio-toggler">
-          <img src={chingling} alt="Chingling audio toggler" />
+        <button
+          className="escape-rope"
+          type="button"
+          onClick={handleClickEscape}
+        >
+          <img src={escapeRope} alt="Escape rope" />
         </button>
         <p>
           Choose new Pokémon to earn points. Avoid selecting previously chosen

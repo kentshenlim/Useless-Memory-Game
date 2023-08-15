@@ -5,6 +5,7 @@ import errorSound from '../assets/audio/error.wav';
 import levelUpSound from '../assets/audio/levelUp.wav';
 import saveSound from '../assets/audio/save.wav';
 import doorSound from '../assets/audio/door.wav';
+import fleeSound from '../assets/audio/flee.wav';
 import selectSound from '../assets/audio/select.wav';
 
 const aSoundNode = new Audio(aSound);
@@ -15,6 +16,7 @@ const levelUpSoundNode = new Audio(levelUpSound);
 const saveSoundNode = new Audio(saveSound);
 const doorSoundNode = new Audio(doorSound);
 const selectSoundNode = new Audio(selectSound);
+const fleeSoundNode = new Audio(fleeSound);
 
 function playSound(node) {
   node.currentTime = 0;
@@ -29,7 +31,8 @@ const sound = {
   level: () => playSound(levelUpSoundNode),
   save: () => playSound(saveSoundNode),
   door: () => playSound(doorSoundNode),
-  select: () => playSound(selectSoundNode)
+  flee: () => playSound(fleeSoundNode),
+  select: () => playSound(selectSoundNode),
 }
 
 export default sound;

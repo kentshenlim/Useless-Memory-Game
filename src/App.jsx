@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './App.css';
 import trolling from './assets/img/trolling.gif';
 import crying from './assets/img/crying.gif';
@@ -9,6 +9,7 @@ import PopUp from './components/PopUp';
 import Fireflies from './components/Fireflies';
 import sound from './utils/sound';
 import SoundContext from './components/SoundContext';
+import forestTheme from './assets/audio/forest_theme_normal.mp3';
 
 function App() {
   console.log('app');
@@ -17,11 +18,27 @@ function App() {
   const [pokemonList, setPokemonList] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [bgm, setBgm] = useState(forestTheme);
+
+  const bgmNode = useRef(null);
+
+  function handleMouseEnterBgm() {
+    bgmNode.current.play();
+    console.log('hello');
+  }
+
+  useEffect(() => {
+    window.addEventListener('mouseenter', handleMouseEnterBgm, true);
+    return () => {
+      window.removeEventListener('mouseenter', handleMouseEnterBgm);
+    };
+  }, []);
 
   return (
     <div className="app-wrapper">
       <SoundContext.Provider value={sound}>
         <Fireflies number={8} />
+        <audio src={bgm} loop={true} ref={bgmNode} muted></audio>
         {status == 'asking' ? (
           <Ask
             setStatus={setStatus}
