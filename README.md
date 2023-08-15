@@ -16,4 +16,3 @@
 ## TODO
 
 TODO: loading issue: loading screen should be displayed until all images loaded
-TODO: animated border for audio when muted and at asking

@@ -58,7 +58,9 @@ function App() {
           ref={bgmNode}
         ></audio>
         <button
-          className="audio-toggler"
+          className={
+            'audio-toggler' + (isMuted && status === 'asking' ? ' ringing' : '')
+          }
           type="button"
           onClick={handleClickAudioToggler}
         >

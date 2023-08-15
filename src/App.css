@@ -29,8 +29,8 @@
 .audio-toggler {
   border-radius: 50%;
   position: absolute;
-  bottom: 0.5%;
-  left: 0.5%;
+  bottom: 1%;
+  left: 1%;
   width: 3rem;
   height: 3rem;
   padding: 0.5rem;
@@ -39,4 +39,37 @@
 .audio-toggler > img {
   width: 100%;
   height: 100%;
+}
+
+.audio-toggler.ringing:before {
+  content: '';
+  position: absolute;
+  border: solid #4eabc7 2px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  /* transform: translateX(-50%) translateY(-50%); */
+  animation: expandFadeInOut 3s infinite;
+}
+
+@keyframes expandFadeInOut {
+  0% {
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    opacity: 0;
+  }
+  1% {
+    transform: translateX(-50%) translateY(-50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) scale(1.4);
+    opacity: 0;
+  }
+}
+
+body {
+  overflow: hidden; /* Need to handle properly with media query*/
+  /* Needed for chingling effect */
 }
