@@ -19,8 +19,13 @@ function App() {
   const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
   const [pokemonList, setPokemonList] = useState([]);
   const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
+  const [bestScore, setBestScore] = useState(() => {
+    const previousBestScore = localStorage.getItem('catchEmRecall_bestScore');
+    if (previousBestScore === null) return 0;
+    return +previousBestScore;
+  });
   const [isMuted, setIsMuted] = useState(true);
+  console.log(123);
 
   function handleClickAudioToggler() {
     setIsMuted(!isMuted);
@@ -29,7 +34,7 @@ function App() {
     else sound.chingling();
   }
 
-  const bgmNode = useRef(null); // For direct DOM manipulation
+  const bgmNode = useRef(null); // For direct DOM manipulation for audio
 
   useEffect(() => {
     const audioNode = bgmNode.current;
@@ -38,6 +43,10 @@ function App() {
       audioNode.currentTime = 0;
     } else audioNode.play();
   }, [isMuted, status]); // Might need to replay another song when status changed
+
+  useEffect(() => {
+    localStorage.setItem('catchEmRecall_bestScore', `${bestScore}`);
+  }, [bestScore]);
 
   return (
     <div className="app-wrapper">
