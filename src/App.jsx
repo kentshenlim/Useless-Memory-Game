@@ -16,14 +16,12 @@ import forestTheme from './assets/audio/forest_theme_normal.mp3';
 function App() {
   console.log('app');
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
-  const [status, setStatus] = useState('gaming'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
+  const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
   const [pokemonList, setPokemonList] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [bgm, setBgm] = useState(forestTheme);
   const [isMuted, setIsMuted] = useState(true);
-
-  const bgmNode = useRef(null);
 
   function handleClickAudioToggler() {
     setIsMuted(!isMuted);
@@ -31,11 +29,21 @@ function App() {
     else sound.chingling();
   }
 
+  const bgmNode = useRef(null);
+
+  useEffect(() => {
+    const audioNode = bgmNode.current;
+    if (isMuted) {
+      audioNode.pause();
+      audioNode.currentTime = 0;
+    } else audioNode.play();
+  }, [isMuted]);
+
   return (
     <div className="app-wrapper">
       <SoundContext.Provider value={sound}>
         <Fireflies number={8} />
-        <audio src={bgm} loop={true} ref={bgmNode} muted></audio>
+        <audio src={bgm} loop={true} ref={bgmNode}></audio>
         <button
           className="audio-toggler"
           type="button"
