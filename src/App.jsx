@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import './App.css';
+import chingling from './assets/img/chingling.svg';
+import chimecho from './assets/img/chimecho.svg';
 import trolling from './assets/img/trolling.gif';
 import crying from './assets/img/crying.gif';
 import Ask from './components/Ask';
@@ -14,31 +16,33 @@ import forestTheme from './assets/audio/forest_theme_normal.mp3';
 function App() {
   console.log('app');
   const [difficulty, setDifficulty] = useState('medium'); // 'easy', 'medium', 'hard'
-  const [status, setStatus] = useState('asking'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
+  const [status, setStatus] = useState('gaming'); // 'asking', 'loading', 'gaming', 'gameWon', 'gameOver'
   const [pokemonList, setPokemonList] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [bgm, setBgm] = useState(forestTheme);
+  const [isMuted, setIsMuted] = useState(true);
 
   const bgmNode = useRef(null);
 
-  function handleMouseEnterBgm() {
-    bgmNode.current.play();
-    console.log('hello');
+  function handleClickAudioToggler() {
+    setIsMuted(!isMuted);
+    if (isMuted) sound.chimecho();
+    else sound.chingling();
   }
-
-  useEffect(() => {
-    window.addEventListener('mouseenter', handleMouseEnterBgm, true);
-    return () => {
-      window.removeEventListener('mouseenter', handleMouseEnterBgm);
-    };
-  }, []);
 
   return (
     <div className="app-wrapper">
       <SoundContext.Provider value={sound}>
         <Fireflies number={8} />
         <audio src={bgm} loop={true} ref={bgmNode} muted></audio>
+        <button
+          className="audio-toggler"
+          type="button"
+          onClick={handleClickAudioToggler}
+        >
+          <img src={isMuted ? chimecho : chingling} alt="Audio-toggler" />
+        </button>
         {status == 'asking' ? (
           <Ask
             setStatus={setStatus}
