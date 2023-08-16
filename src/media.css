@@ -73,15 +73,14 @@
   .game-wrapper {
     padding: 1rem !important;
     min-width: 300px !important;
-    justify-content: center !important;
     gap: 2rem !important;
   }
 
   .game-navbar p {
     font-size: 0.75rem !important;
-    padding: 0.1rem !important;
-    width: 80% !important;
-    margin-left: 1rem !important;
+    padding: 0.25rem !important;
+    width: 70% !important;
+    margin-left: 2rem !important;
   }
 
   .game-navbar {
@@ -129,8 +128,9 @@
     min-width: 275px !important;
     width: 80% !important;
     padding: 0.5rem !important;
-    column-gap: 0.5rem !important;
-    row-gap: 0.5rem !important;
+    padding-block: 1rem !important;
+    column-gap: 1.5rem !important;
+    row-gap: 1.5rem !important;
     height: auto !important;
   }
 
@@ -156,5 +156,11 @@
 
   .pop-up-wrapper * {
     font-size: 0.8rem !important;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .game-wrapper {
+    justify-content: center !important;
   }
 }
